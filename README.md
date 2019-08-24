@@ -1,3 +1,3 @@
 # Nano
 
-A description of this package.
+A collection of iOS and Swift modules/extensions.
