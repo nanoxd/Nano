@@ -87,6 +87,14 @@ final class EitherTests: XCTestCase {
         XCTAssertEqual(int, 5)
     }
 
+    func test_description_onLeft() {
+        XCTAssertEqual(left.description, ".left(4)")
+    }
+
+    func test_description_onRight() {
+        XCTAssertEqual(right.description, ".right(four)")
+    }
+
     static var allTests = [
         ("test_isLeft", test_isLeft),
         ("test_isRight", test_isRight),
@@ -98,5 +106,7 @@ final class EitherTests: XCTestCase {
         ("test_mapLeft_appliesToLeft", test_mapLeft_appliesToLeft),
         ("test_bimap_appliesToRight", test_bimap_appliesToRight),
         ("test_bimap_appliesToLeft", test_bimap_appliesToLeft),
+        ("test_description_onLeft", test_description_onLeft),
+        ("test_description_onRight", test_description_onRight),
     ]
 }

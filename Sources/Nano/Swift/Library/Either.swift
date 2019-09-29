@@ -8,22 +8,22 @@ public enum Either<Left, Right> {
 
     /// Returns the value of `Left` instances, or `nil` for `Right` instances.
     public var left: Left? {
-        return either(ifLeft: Optional<Left>.some, ifRight: constant(nil))
+        either(ifLeft: Optional<Left>.some, ifRight: constant(nil))
     }
 
     /// Returns the value of `Right` instances, or `nil` for `Left` instances.
     public var right: Right? {
-        return either(ifLeft: constant(nil), ifRight: Optional<Right>.some)
+        either(ifLeft: constant(nil), ifRight: Optional<Right>.some)
     }
 
     /// Returns true of `Left` instances, or false for `Right` instances.
     public var isLeft: Bool {
-        return either(ifLeft: constant(true), ifRight: constant(false))
+        either(ifLeft: constant(true), ifRight: constant(false))
     }
 
     /// Returns true of `Right` instances, or false for `Left` instances.
     public var isRight: Bool {
-        return either(ifLeft: constant(false), ifRight: constant(true))
+        either(ifLeft: constant(false), ifRight: constant(true))
     }
 }
 
@@ -66,12 +66,12 @@ public extension Either {
     /// - Returns: An `Either` with the result of evaluating `transform`
     ///   as the new right value, if this instance represents a right value.
     func map<NewRight>(_ transform: (Right) -> NewRight) -> Either<Left, NewRight> {
-        return flatMap { .right(transform($0)) }
+        flatMap { .right(transform($0)) }
     }
 
     /// Returns the result of applying `transform` to `Right` values, or re-wrapping `Left` values.
     func flatMap<NewRight>(_ transform: (Right) -> Either<Left, NewRight>) -> Either<Left, NewRight> {
-        return either(
+        either(
             ifLeft: Either<Left, NewRight>.left,
             ifRight: transform
         )
@@ -98,12 +98,12 @@ public extension Either {
     /// - Returns: A `Either` instance with the result of evaluating `transform`
     ///   as the new left value if this instance represents a left value.
     func mapLeft<NewLeft>(_ transform: (Left) -> NewLeft) -> Either<NewLeft, Right> {
-        return flatMapLeft { .left(transform($0)) }
+        flatMapLeft { .left(transform($0)) }
     }
 
     /// Returns the result of applying `transform` to `Left` values, or re-wrapping `Right` values.
     func flatMapLeft<NewLeft>(_ transform: (Left) -> Either<NewLeft, Right>) -> Either<NewLeft, Right> {
-        return either(
+        either(
             ifLeft: transform,
             ifRight: Either<NewLeft, Right>.right
         )
@@ -114,7 +114,7 @@ public extension Either {
         leftBy lf: (Left) -> NewLeft,
         rightBy rf: (Right) -> NewRight
     ) -> Either<NewLeft, NewRight> {
-        return either(
+        either(
             ifLeft: { .left(lf($0)) },
             ifRight: { .right(rf($0)) }
         )
@@ -125,9 +125,9 @@ public extension Either {
 
 extension Either: CustomStringConvertible {
     public var description: String {
-        return either(
-            ifLeft: { ".Left(\($0))" },
-            ifRight: { ".Right(\($0))" }
+        either(
+            ifLeft: { ".left(\($0))" },
+            ifRight: { ".right(\($0))" }
         )
     }
 }
