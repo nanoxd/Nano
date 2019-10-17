@@ -62,7 +62,7 @@
         ///
         /// `true` if the user has enabled Reduce Transparency in **Settings**; otherwise, `false`.
         private var isReduceTransparencyEnabled: Bool {
-            return UIAccessibility.isReduceTransparencyEnabled
+            UIAccessibility.isReduceTransparencyEnabled
         }
 
         /// A boolean property to determine whether this view automatically enables blur effect.

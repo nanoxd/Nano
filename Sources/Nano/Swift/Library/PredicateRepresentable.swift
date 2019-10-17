@@ -73,7 +73,7 @@ extension NSPredicate: PredicateRepresentable {}
 extension NSPredicate {
     /// Creates and returns a predicate that never matches any result.
     public static var noMatch: NSPredicate {
-        return NSPredicate(value: false)
+        NSPredicate(value: false)
     }
 }
 
@@ -96,6 +96,6 @@ extension Array where Element: NSPredicate {
     /// - Returns: A specialized predicate that evaluates logical combinations of
     ///            other predicates.
     public func joined(by type: NSCompoundPredicate.LogicalType) -> NSPredicate {
-        return NSCompoundPredicate(type: type, subpredicates: self)
+        NSCompoundPredicate(type: type, subpredicates: self)
     }
 }

@@ -1,11 +1,11 @@
 /// Returns a function which ignores its argument and returns `x` instead.
 public func constant<T, U>(_ x: T) -> (U) -> T {
-    return { _ in x }
+    { _ in x }
 }
 
 /// The identity function; returns its argument.
 public func identity<T>(_ x: T) -> T {
-    return x
+    x
 }
 
 /// Configures a given value via closure. Useful to avoid the `lazy var` dance.

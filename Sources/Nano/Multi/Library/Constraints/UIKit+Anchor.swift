@@ -98,7 +98,7 @@
             priority: UILayoutPriority = .required,
             isActive: Bool = true
         ) -> NSLayoutConstraint {
-            return pin(
+            pin(
                 edge: edge,
                 toEdge: toEdge,
                 ofAnchorable: layoutGuide,
@@ -217,7 +217,7 @@
             relation: LayoutRelation = .equal,
             isActive: Bool = true
         ) -> [NSLayoutConstraint] {
-            return pin(toAnchorable: layoutGuide, edges: edges, relation: relation, isActive: isActive)
+            pin(toAnchorable: layoutGuide, edges: edges, relation: relation, isActive: isActive)
         }
 
         /// A function that allows you to pin the current `UILayoutGuide` to a `UIView`.
@@ -235,7 +235,7 @@
             relation: LayoutRelation = .equal,
             isActive: Bool = true
         ) -> [NSLayoutConstraint] {
-            return pin(toAnchorable: view, edges: edges, relation: relation, isActive: isActive)
+            pin(toAnchorable: view, edges: edges, relation: relation, isActive: isActive)
         }
 
         /// A function that allows you to pin the one edge of the current `UILayoutGuide` to another `UILayoutGuide`.
@@ -259,7 +259,7 @@
             priority: LayoutPriority = .required,
             isActive: Bool = true
         ) -> NSLayoutConstraint {
-            return pin(
+            pin(
                 edge: edge,
                 toEdge: toEdge,
                 ofAnchorable: layoutGuide,
@@ -291,7 +291,7 @@
             priority: UILayoutPriority = .required,
             isActive: Bool = true
         ) -> NSLayoutConstraint {
-            return pin(
+            pin(
                 edge: edge,
                 toEdge: toEdge,
                 ofAnchorable: view,
@@ -323,7 +323,7 @@
             relation: LayoutRelation,
             isActive: Bool
         ) -> NSLayoutConstraint {
-            return set(
+            set(
                 relativeSize: sizeAnchor,
                 toSizeAnchor: toSizeAnchor,
                 ofAnchorable: layoutGuide,
@@ -355,7 +355,7 @@
             relation: LayoutRelation,
             isActive: Bool
         ) -> NSLayoutConstraint {
-            return set(
+            set(
                 relativeSize: sizeAnchor,
                 toSizeAnchor: toSizeAnchor,
                 ofAnchorable: view,

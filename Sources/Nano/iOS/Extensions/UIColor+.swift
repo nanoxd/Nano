@@ -36,7 +36,7 @@
             }
 
             func round(_ value: CGFloat) -> Int {
-                return lround(Double(value) * 255)
+                lround(Double(value) * 255)
             }
 
             if alpha == 1 {
@@ -94,7 +94,7 @@
         }
 
         func alpha(_ value: CGFloat) -> UIColor {
-            return withAlphaComponent(value)
+            withAlphaComponent(value)
         }
     }
 #endif

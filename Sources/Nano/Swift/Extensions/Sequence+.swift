@@ -10,7 +10,7 @@ public extension Sequence {
     /// - Parameter newValue: Value to intersperse throughout the original collection
     /// - Returns: A new `Sequence` with `newValue` interspersed between each original element
     func interspersed(_ newValue: Element) -> AnySequence<Element> {
-        return AnySequence { () -> AnyIterator<Element> in
+        AnySequence { () -> AnyIterator<Element> in
             var iterator = self.makeIterator()
             var intersperse = false
             var lastValue = iterator.next()
@@ -47,7 +47,7 @@ public extension Sequence {
     @inlinable func reject(
         _ isNotIncluded: (Element) throws -> Bool
     ) rethrows -> [Element] {
-        return try filter { try !isNotIncluded($0) }
+        try filter { try !isNotIncluded($0) }
     }
 }
 
@@ -55,7 +55,7 @@ public extension Sequence {
 
 public extension Sequence {
     func sum<T: Numeric>(for keyPath: KeyPath<Element, T>) -> T {
-        return reduce(0) { sum, element in
+        reduce(0) { sum, element in
             sum + element[keyPath: keyPath]
         }
     }
@@ -64,6 +64,6 @@ public extension Sequence {
 public extension Sequence where Element: Numeric {
     /// Adds all elements in `Sequence`.
     func sum() -> Element {
-        return reduce(0, +)
+        reduce(0, +)
     }
 }

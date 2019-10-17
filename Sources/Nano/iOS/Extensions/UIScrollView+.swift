@@ -13,11 +13,11 @@
             case unknown
 
             public var isVertical: Bool {
-                return self == .up || self == .down
+                self == .up || self == .down
             }
 
             public var isHorizontal: Bool {
-                return self == .left || self == .right
+                self == .left || self == .right
             }
         }
 

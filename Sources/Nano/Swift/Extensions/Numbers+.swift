@@ -5,7 +5,7 @@ import Foundation
 public extension SignedInteger {
     /// Returns the number of digits in `self`
     var digitCount: Self {
-        return numberOfDigits(in: self)
+        numberOfDigits(in: self)
     }
 
     /// Recursive function to determine the number of digits in `number`

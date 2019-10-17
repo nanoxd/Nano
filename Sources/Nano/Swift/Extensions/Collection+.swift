@@ -7,7 +7,7 @@ public extension Collection {
     ///
     /// - Parameter index: Index of element.
     subscript(safe index: Index) -> Element? {
-        return indices.contains(index) ? self[index] : nil
+        indices.contains(index) ? self[index] : nil
     }
 
     // MARK:
@@ -18,7 +18,7 @@ public extension Collection {
     /// - Returns: `true` if the sequence contains any elements that satisfy
     /// `predicate`; otherwise false.
     func anySatisfy(_ predicate: (Element) -> Bool) -> Bool {
-        return !allSatisfy { !predicate($0) }
+        !allSatisfy { !predicate($0) }
     }
 }
 
@@ -42,6 +42,6 @@ public extension Collection where Element: Hashable {
     /// - Returns: A count of elements that satisfy the given predicate.
     /// - Complexity: O(*n*), where *n* is the length of the sequence.
     func count(where predicate: (Element) throws -> Bool) rethrows -> Int {
-        return try filter(predicate).count
+        try filter(predicate).count
     }
 }

@@ -6,7 +6,7 @@ public extension Dictionary {
     /// Maps values using transform function into a new dictionary
     /// - Parameter transform: The transform function
     func compactMapValues<T>(_ transform: (Value) throws -> T?) rethrows -> [Key: T] {
-        return try reduce(into: [Key: T]()) { result, x in
+        try reduce(into: [Key: T]()) { result, x in
             if let value = try transform(x.value) {
                 result[x.key] = value
             }
@@ -47,6 +47,6 @@ public extension Dictionary {
     ///                        type.
     /// - Returns: A dictionary containing the transformed key value pairs.
     func mapPairs<K: Hashable, T>(_ transform: (Element) throws -> (K, T)) rethrows -> [K: T] {
-        return [K: T](uniqueKeysWithValues: try map(transform))
+        [K: T](uniqueKeysWithValues: try map(transform))
     }
 }

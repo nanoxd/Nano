@@ -46,7 +46,7 @@ public struct EdgeAnchor: OptionSet, Anchor {
     /// - Returns: A `.leading` `EdgeAnchor`.
     @discardableResult
     public static func leading(_ constant: CGFloat, priority: LayoutPriority = .required) -> EdgeAnchor {
-        return EdgeAnchor(rawValue: EdgeAnchor.leading.rawValue, constant: constant, priority: priority)
+        EdgeAnchor(rawValue: EdgeAnchor.leading.rawValue, constant: constant, priority: priority)
     }
 
     /// A function that allows you to create a trailing anchor using `.trailing(constant)` syntax.
@@ -57,7 +57,7 @@ public struct EdgeAnchor: OptionSet, Anchor {
     /// - Returns: A `.trailing` `EdgeAnchor`.
     @discardableResult
     public static func trailing(_ constant: CGFloat, priority: LayoutPriority = .required) -> EdgeAnchor {
-        return EdgeAnchor(rawValue: EdgeAnchor.trailing.rawValue, constant: constant, priority: priority)
+        EdgeAnchor(rawValue: EdgeAnchor.trailing.rawValue, constant: constant, priority: priority)
     }
 
     /// A function that allows you to create a left anchor using `.left(constant)` syntax.
@@ -68,7 +68,7 @@ public struct EdgeAnchor: OptionSet, Anchor {
     /// - Returns: A `.left` `EdgeAnchor`.
     @discardableResult
     public static func left(_ constant: CGFloat, priority: LayoutPriority = .required) -> EdgeAnchor {
-        return EdgeAnchor(rawValue: EdgeAnchor.left.rawValue, constant: constant, priority: priority)
+        EdgeAnchor(rawValue: EdgeAnchor.left.rawValue, constant: constant, priority: priority)
     }
 
     /// A function that allows you to create a right anchor using `.right(constant)` syntax.
@@ -79,7 +79,7 @@ public struct EdgeAnchor: OptionSet, Anchor {
     /// - Returns: A `.right` `EdgeAnchor`.
     @discardableResult
     public static func right(_ constant: CGFloat, priority: LayoutPriority = .required) -> EdgeAnchor {
-        return EdgeAnchor(rawValue: EdgeAnchor.right.rawValue, constant: constant, priority: priority)
+        EdgeAnchor(rawValue: EdgeAnchor.right.rawValue, constant: constant, priority: priority)
     }
 
     /// A function that allows you to create a top anchor using `.top(constant)` syntax.
@@ -90,7 +90,7 @@ public struct EdgeAnchor: OptionSet, Anchor {
     /// - Returns: A `.top` `EdgeAnchor`.
     @discardableResult
     public static func top(_ constant: CGFloat, priority: LayoutPriority = .required) -> EdgeAnchor {
-        return EdgeAnchor(rawValue: EdgeAnchor.top.rawValue, constant: constant, priority: priority)
+        EdgeAnchor(rawValue: EdgeAnchor.top.rawValue, constant: constant, priority: priority)
     }
 
     /// A function that allows you to create a bottom anchor using `.bottom(constant)` syntax.
@@ -101,7 +101,7 @@ public struct EdgeAnchor: OptionSet, Anchor {
     /// - Returns: A `.bottom` `EdgeAnchor`.
     @discardableResult
     public static func bottom(_ constant: CGFloat, priority: LayoutPriority = .required) -> EdgeAnchor {
-        return EdgeAnchor(rawValue: EdgeAnchor.bottom.rawValue, constant: constant, priority: priority)
+        EdgeAnchor(rawValue: EdgeAnchor.bottom.rawValue, constant: constant, priority: priority)
     }
 
     /// A function that allows you to create a centerX anchor using `.centerX(constant)` syntax.
@@ -112,7 +112,7 @@ public struct EdgeAnchor: OptionSet, Anchor {
     /// - Returns: A `.centerX` `EdgeAnchor`.
     @discardableResult
     public static func centerX(_ constant: CGFloat, priority: LayoutPriority = .required) -> EdgeAnchor {
-        return EdgeAnchor(rawValue: EdgeAnchor.centerX.rawValue, constant: constant, priority: priority)
+        EdgeAnchor(rawValue: EdgeAnchor.centerX.rawValue, constant: constant, priority: priority)
     }
 
     /// A function that allows you to create a centerY anchor using `.centerY(constant)` syntax.
@@ -123,7 +123,7 @@ public struct EdgeAnchor: OptionSet, Anchor {
     /// - Returns: A `.centerY` `EdgeAnchor`.
     @discardableResult
     public static func centerY(_ constant: CGFloat, priority: LayoutPriority = .required) -> EdgeAnchor {
-        return EdgeAnchor(rawValue: EdgeAnchor.centerY.rawValue, constant: constant, priority: priority)
+        EdgeAnchor(rawValue: EdgeAnchor.centerY.rawValue, constant: constant, priority: priority)
     }
 
     /// A function that allows you to create a width anchor using `.width(constant)` syntax.
@@ -134,7 +134,7 @@ public struct EdgeAnchor: OptionSet, Anchor {
     /// - Returns: A `.width` `EdgeAnchor`.
     @discardableResult
     public static func width(_ constant: CGFloat, priority: LayoutPriority = .required) -> EdgeAnchor {
-        return EdgeAnchor(rawValue: EdgeAnchor.width.rawValue, constant: constant, priority: priority)
+        EdgeAnchor(rawValue: EdgeAnchor.width.rawValue, constant: constant, priority: priority)
     }
 
     /// A function that allows you to create a height anchor using `.height(constant)` syntax.
@@ -145,6 +145,6 @@ public struct EdgeAnchor: OptionSet, Anchor {
     /// - Returns: A `.height` `EdgeAnchor`.
     @discardableResult
     public static func height(_ constant: CGFloat, priority: LayoutPriority = .required) -> EdgeAnchor {
-        return EdgeAnchor(rawValue: EdgeAnchor.height.rawValue, constant: constant, priority: priority)
+        EdgeAnchor(rawValue: EdgeAnchor.height.rawValue, constant: constant, priority: priority)
     }
 }

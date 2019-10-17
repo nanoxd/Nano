@@ -67,7 +67,7 @@ public extension Anchorable {
     /// - Returns: An `[NSLayoutConstraint]` between the current `Anchorable` and another `Anchorable`.
     @discardableResult
     func set(size sizeAnchors: [SizeAnchor] = SizeAnchor.allSides, relation: LayoutRelation = .equal, isActive: Bool = true) -> [NSLayoutConstraint] {
-        return sizeAnchors.map { self.set(size: $0, relation: relation, isActive: isActive) }
+        sizeAnchors.map { self.set(size: $0, relation: relation, isActive: isActive) }
     }
 }
 

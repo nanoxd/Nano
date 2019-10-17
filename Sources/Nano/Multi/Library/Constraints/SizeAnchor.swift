@@ -28,7 +28,7 @@ public struct SizeAnchor: OptionSet, Anchor {
     /// - Returns: A `.width` `SizeAnchor`.
     @discardableResult
     public static func width(_ constant: CGFloat, priority: LayoutPriority = .required) -> SizeAnchor {
-        return SizeAnchor(rawValue: SizeAnchor.width.rawValue, constant: constant, priority: priority)
+        SizeAnchor(rawValue: SizeAnchor.width.rawValue, constant: constant, priority: priority)
     }
 
     /// A function that allows you to create a height anchor using `.height(constant)` syntax.
@@ -39,6 +39,6 @@ public struct SizeAnchor: OptionSet, Anchor {
     /// - Returns: A `.height` `SizeAnchor`.
     @discardableResult
     public static func height(_ constant: CGFloat, priority: LayoutPriority = .required) -> SizeAnchor {
-        return SizeAnchor(rawValue: SizeAnchor.height.rawValue, constant: constant, priority: priority)
+        SizeAnchor(rawValue: SizeAnchor.height.rawValue, constant: constant, priority: priority)
     }
 }

@@ -15,7 +15,7 @@ public struct FatalReason {
 
 extension FatalReason: CustomStringConvertible {
     public var description: String {
-        return reason
+        reason
     }
 }
 
@@ -33,15 +33,15 @@ public extension FatalReason {
     static let subclassMustImplement: FatalReason = "Must be implemented by subclass."
 
     static func unknownCaseDetected<T: RawRepresentable>(_ case: T) -> FatalReason {
-        return FatalReason("Unknown case detected: \(`case`) - (\(`case`.rawValue))")
+        FatalReason("Unknown case detected: \(`case`) - (\(`case`.rawValue))")
     }
 
     static func dequeueFailed(for name: String, identifier: String) -> FatalReason {
-        return FatalReason("Failed to dequeue \(name) with identifier: \(identifier)")
+        FatalReason("Failed to dequeue \(name) with identifier: \(identifier)")
     }
 
     static func dequeueFailed(for name: String, kind: String, indexPath: IndexPath) -> FatalReason {
-        return FatalReason("Failed to dequeue \(name) for kind: \(kind) at indexPath(\(indexPath.section), \(indexPath.item))")
+        FatalReason("Failed to dequeue \(name) for kind: \(kind) at indexPath(\(indexPath.section), \(indexPath.item))")
     }
 }
 
