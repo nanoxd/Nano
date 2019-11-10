@@ -2,11 +2,11 @@ import Combine
 import Foundation
 
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-class ImageLoader: ObservableObject {
+public class ImageLoader: ObservableObject {
     private var cancellable: AnyCancellable?
-    let objectWillChange = PassthroughSubject<UXImage?, Never>()
+    public let objectWillChange = PassthroughSubject<UXImage?, Never>()
 
-    func load(url: URL) {
+    public func load(url: URL) {
         cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map(\.data)
             .map { UXImage(data: $0) }
@@ -18,7 +18,7 @@ class ImageLoader: ObservableObject {
             })
     }
 
-    func cancel() {
+    public func cancel() {
         cancellable?.cancel()
     }
 }
