@@ -20,11 +20,7 @@ public extension Collection {
     func anySatisfy(_ predicate: (Element) -> Bool) -> Bool {
         !allSatisfy { !predicate($0) }
     }
-}
 
-// MARK: - Collection + Hashable
-
-public extension Collection where Element: Hashable {
     /// Returns the number of elements of the sequence that satisfy the given
     /// predicate.
     ///
