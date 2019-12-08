@@ -2,6 +2,14 @@
     import AppKit
 
     public extension NSView {
+        /// Adds many views to the view’s subviews so it’s displayed above its siblings.
+        /// - Parameter views: The views to add to the view as subviews.
+        func addSubviews(_ views: [NSView]) {
+            views.forEach {
+                addSubview($0)
+            }
+        }
+
         /// Animates `self` to appear as if it's shaking. Repeats four times.
         func shake() {
             let midX = layer?.position.x ?? 0
