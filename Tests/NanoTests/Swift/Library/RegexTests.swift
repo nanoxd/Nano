@@ -1,4 +1,4 @@
-@testable import EliteCore
+@testable import Nano
 import XCTest
 
 final class RegexTests: XCTestCase {
