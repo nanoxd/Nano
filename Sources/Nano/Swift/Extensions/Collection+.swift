@@ -40,4 +40,21 @@ public extension Collection {
     func count(where predicate: (Element) throws -> Bool) rethrows -> Int {
         try filter(predicate).count
     }
+
+    /// Splits a collection by the predicate, pushing elements to the left if the predicate is true.
+    /// - Parameter goesInFirst: Predicate to determine which values should be inserted to the left-hand array.
+    func partition(by goesInFirst: (Element) -> Bool) -> ([Element], [Element]) {
+        var a1 = [Element]()
+        var a2 = [Element]()
+
+        for i in self {
+            if goesInFirst(i) {
+                a1.append(i)
+            } else {
+                a2.append(i)
+            }
+        }
+
+        return (a1, a2)
+    }
 }
