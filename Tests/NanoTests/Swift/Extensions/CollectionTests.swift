@@ -18,6 +18,16 @@ final class CollectionTests: XCTestCase {
         )
     }
 
+    func test_partitionBy() {
+        let wizards = ["Draco Malfoy", "Harry Potter", "Hermione Granger"]
+        let splitWizards = wizards.partition { wizard in
+            wizard.first == "H"
+        }
+
+        XCTAssertEqual(splitWizards.0, Array(wizards.dropFirst()))
+        XCTAssertEqual(splitWizards.1, [wizards[0]])
+    }
+
     func test_subscript_safe() {
         let numbers = [1, 2]
 
@@ -28,6 +38,7 @@ final class CollectionTests: XCTestCase {
     static var allTests = [
         ("test_anySatisfy", test_anySatisfy),
         ("test_countWhere", test_countWhere),
+        ("test_partitionBy", test_partitionBy),
         ("test_subscript_safe", test_countWhere),
     ]
 }
