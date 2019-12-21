@@ -41,6 +41,11 @@ public extension Collection {
         try filter(predicate).count
     }
 
+    /// Returns a paired sequence for `self`.
+    func eachPair() -> Zip2Sequence<Self, Self.SubSequence> {
+        zip(self, dropFirst())
+    }
+
     /// Splits a collection by the predicate, pushing elements to the left if the predicate is true.
     /// - Parameter goesInFirst: Predicate to determine which values should be inserted to the left-hand array.
     func partition(by goesInFirst: (Element) -> Bool) -> ([Element], [Element]) {

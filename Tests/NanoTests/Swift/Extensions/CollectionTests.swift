@@ -18,6 +18,16 @@ final class CollectionTests: XCTestCase {
         )
     }
 
+    func test_eachPair() {
+        let numbers = [1, 2, 3, 4, 5]
+        let pairs = Array(numbers.eachPair())
+
+        XCTAssertEqual(pairs.first?.0, 1)
+        XCTAssertEqual(pairs.first?.1, 2)
+        XCTAssertEqual(pairs.last?.0, 4)
+        XCTAssertEqual(pairs.last?.1, 5)
+    }
+
     func test_partitionBy() {
         let wizards = ["Draco Malfoy", "Harry Potter", "Hermione Granger"]
         let splitWizards = wizards.partition { wizard in
@@ -84,6 +94,7 @@ final class CollectionTests: XCTestCase {
     static var allTests = [
         ("test_anySatisfy", test_anySatisfy),
         ("test_countWhere", test_countWhere),
+        ("test_eachPair", test_eachPair),
         ("test_partitionBy", test_partitionBy),
         ("test_strideByStep", test_strideByStep),
         ("test_strideByStep_fromStart", test_strideByStep_fromStart),
