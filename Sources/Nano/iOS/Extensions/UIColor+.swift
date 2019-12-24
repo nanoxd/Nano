@@ -89,7 +89,7 @@
 
     public extension UIColor {
         var alpha: CGFloat {
-            get { return cgColor.alpha }
+            get { cgColor.alpha }
             set { withAlphaComponent(newValue) }
         }
 

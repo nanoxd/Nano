@@ -54,7 +54,7 @@
         /// This property is only used when `isSmartBlurEffectEnabled` is `true`
         /// and `UIAccessibility.isReduceTransparencyEnabled` is `false`.
         @objc public dynamic var effect: UIVisualEffect? {
-            get { return blurEffectView.effect }
+            get { blurEffectView.effect }
             set { blurEffectView.effect = newValue }
         }
 

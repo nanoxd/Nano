@@ -5,7 +5,7 @@
         // MARK: - Properties
 
         var borderColor: UIColor {
-            get { return layer.borderColor != nil ? UIColor(cgColor: layer.borderColor!) : .clear }
+            get { layer.borderColor != nil ? UIColor(cgColor: layer.borderColor!) : .clear }
             set { layer.borderColor = newValue.cgColor }
         }
 
@@ -15,7 +15,7 @@
         }
 
         var cornerRadius: CGFloat {
-            get { return layer.cornerRadius }
+            get { layer.cornerRadius }
             set {
                 layer.cornerRadius = newValue
                 layer.masksToBounds = newValue > 0

@@ -10,7 +10,7 @@
         @objc open dynamic var placeholderTextColor: UIColor? {
             /// Unfortunately, when the `searchBarStyle == .minimal` then
             /// `textField?.placeholderLabel?.textColor` doesn't work.
-            get { return associatedObject(&AssociatedKey.placeholderTextColor) }
+            get { associatedObject(&AssociatedKey.placeholderTextColor) }
             set {
                 setAssociatedObject(&AssociatedKey.placeholderTextColor, value: newValue)
 
