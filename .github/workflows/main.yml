@@ -54,13 +54,16 @@ jobs:
       - name: Select Xcode ${{ matrix.xcode }}
         run: sudo xcode-select --switch /Applications/Xcode_${{ matrix.xcode }}.app
 
+      - name: Install xcutils
+        run: brew install https://gist.githubusercontent.com/nanoxd/2cfaeb2d3d06ab4e8bbd81708e6f0ce2/raw/be608ede5857409ec1a0f7678d05ddb7ca177c2f/xcutils.rb --force
+
       - name: Cache SwiftPM
         uses: actions/cache@v1
         with:
-          path: CIDependencies/.build
-          key: ${{ runner.os }}-xcode_${{ matrix.xcode }}-swiftpm-ci-deps-${{ github.workspace }}-${{ hashFiles('CIDependencies/Package.resolved') }}
+          path: .build
+          key: ${{ runner.os }}-xcode_${{ matrix.xcode }}-swiftpm-${{ matrix.platform }}-deps-${{ github.workspace }}-${{ hashFiles('Package.resolved') }}
           restore-keys: |
-            ${{ runner.os }}-xcode_${{ matrix.xcode }}-swiftpm-ci-deps-${{ github.workspace }}
+            ${{ runner.os }}-xcode_${{ matrix.xcode }}-swiftpm-${{ matrix.platform }}-deps-${{ github.workspace }}
 
       - name: Cache DerivedData
         uses: actions/cache@v1
@@ -71,7 +74,7 @@ jobs:
             ${{ runner.os }}-${{ matrix.platform }}_derived_data
 
       - name: Run Tests
-        run: swift run --configuration release --skip-update --package-path ./CIDependencies/ xcutils test ${{ matrix.platform }} --scheme Nano --enable-code-coverage
+        run: xcutils test ${{ matrix.platform }} --scheme Nano --enable-code-coverage
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
