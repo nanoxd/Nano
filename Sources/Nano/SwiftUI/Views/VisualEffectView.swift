@@ -2,7 +2,7 @@
     import SwiftUI
     import UIKit
 
-    @available(iOS 13.0, *)
+    @available(iOS 13.0, tvOS 13.0, *)
     struct VisualEffectView: UIViewRepresentable {
         typealias UIViewType = UIVisualEffectView
         var style: UIBlurEffect.Style
