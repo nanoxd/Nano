@@ -5,7 +5,7 @@ import Foundation
     import UIKit
 
     public class AlignedLabel: UILabel {
-        public override func drawText(in rect: CGRect) {
+        override public func drawText(in rect: CGRect) {
             var rect = rect
             let fittedSize = sizeThatFits(rect.size)
 

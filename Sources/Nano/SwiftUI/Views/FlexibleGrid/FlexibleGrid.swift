@@ -2,7 +2,6 @@ import Foundation
 import SwiftUI
 
 /// Creates a flexible grid that accomodates the size of the containing content.
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct FlexibleGrid<Data: Collection, Content: View>: View where Data.Element: Hashable {
     public let data: Data
     public let spacing: CGFloat
@@ -30,7 +29,6 @@ public struct FlexibleGrid<Data: Collection, Content: View>: View where Data.Ele
 }
 
 /// Lays out the elements in a grid and occupies the size required based on the parent's available width
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 struct FlexibleView<Data: Collection, Content: View>: View where Data.Element: Hashable {
     let availableWidth: CGFloat
     let data: Data

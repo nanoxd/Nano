@@ -28,6 +28,7 @@
             setup()
         }
 
+        @available(*, unavailable)
         required init?(coder decoder: NSCoder) {
             fatalError()
         }

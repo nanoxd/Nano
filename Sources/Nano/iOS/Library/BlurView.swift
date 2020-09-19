@@ -127,7 +127,7 @@
 
         // MARK: - Methods
 
-        public override func addSubview(_ view: UIView) {
+        override public func addSubview(_ view: UIView) {
             guard isSmartBlurEffectEnabled, !isReduceTransparencyEnabled else {
                 super.addSubview(view)
                 return
@@ -136,7 +136,7 @@
             blurEffectView.contentView.addSubview(view)
         }
 
-        public override func bringSubviewToFront(_ view: UIView) {
+        override public func bringSubviewToFront(_ view: UIView) {
             guard isSmartBlurEffectEnabled, !isReduceTransparencyEnabled else {
                 super.bringSubviewToFront(view)
                 return
@@ -145,7 +145,7 @@
             blurEffectView.contentView.bringSubviewToFront(view)
         }
 
-        public override func sendSubviewToBack(_ view: UIView) {
+        override public func sendSubviewToBack(_ view: UIView) {
             guard isSmartBlurEffectEnabled, !isReduceTransparencyEnabled else {
                 super.sendSubviewToBack(view)
                 return
