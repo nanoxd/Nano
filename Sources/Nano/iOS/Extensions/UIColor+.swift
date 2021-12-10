@@ -3,29 +3,29 @@
 
     // MARK: - Hex Support
 
-    extension UIColor {
-        public convenience init(hex: Int64) {
+    public extension UIColor {
+        convenience init(hex: Int64) {
             let (r, g, b, a) = UIColor.components(hex: hex)
             self.init(red: r, green: g, blue: b, alpha: a)
         }
 
-        public convenience init(hex: Int64, alpha: CGFloat) {
+        convenience init(hex: Int64, alpha: CGFloat) {
             let (r, g, b, a) = UIColor.components(hex: hex, alpha: alpha)
             self.init(red: r, green: g, blue: b, alpha: a)
         }
 
         @nonobjc
-        public convenience init(hex: String) {
+        convenience init(hex: String) {
             self.init(hex: UIColor.components(hex: hex))
         }
 
         @nonobjc
-        public convenience init(hex: String, alpha: CGFloat) {
+        convenience init(hex: String, alpha: CGFloat) {
             self.init(hex: UIColor.components(hex: hex), alpha: alpha)
         }
 
         /// Returns the hex value of `self`
-        public var hex: String {
+        var hex: String {
             var red: CGFloat = 0
             var green: CGFloat = 0
             var blue: CGFloat = 0

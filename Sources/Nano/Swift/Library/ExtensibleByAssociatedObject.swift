@@ -3,11 +3,11 @@ import Foundation
 /// A marker protocol to add better ergonomics to associated objects.
 public protocol ExtensibleByAssociatedObject {}
 
-extension ExtensibleByAssociatedObject {
+public extension ExtensibleByAssociatedObject {
     /// Returns the value associated with a given object for a given key.
     /// - Parameter key: The key for the association.
     /// - Returns: The value associated with the key for object.
-    public func associatedObject<T>(_ key: UnsafeRawPointer) -> T? {
+    func associatedObject<T>(_ key: UnsafeRawPointer) -> T? {
         objc_getAssociatedObject(self, key) as? T
     }
 
@@ -16,7 +16,7 @@ extension ExtensibleByAssociatedObject {
     /// - Parameter defaultValue: Value to return if there is no associated value
     /// - Parameter defaultValueAssociationPolicy: An association policity to save the `defaultValue` with.
     /// - Returns: The value associated with the key for object.
-    public func associatedObject<T>(
+    func associatedObject<T>(
         _ key: UnsafeRawPointer,
         default defaultValue: @autoclosure () -> T,
         policy defaultValueAssociationPolicy: AssociationPolicy? = nil
@@ -38,7 +38,7 @@ extension ExtensibleByAssociatedObject {
     /// - Parameter key: Key for the association.
     /// - Parameter value: Value to associate with the key for object. Pass `nil` to clear an existing association.
     /// - Parameter associationPolicy: Policy for the association. The default value is `.strong`.
-    public func setAssociatedObject<T>(
+    func setAssociatedObject<T>(
         _ key: UnsafeRawPointer,
         value: T?,
         policy associationPolicy: AssociationPolicy = .strong

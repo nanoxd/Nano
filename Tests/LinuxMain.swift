@@ -1,6 +1,5 @@
-import XCTest
-
 import NanoTests
+import XCTest
 
 var tests = [XCTestCaseEntry]()
 tests += NanoTests.allTests()

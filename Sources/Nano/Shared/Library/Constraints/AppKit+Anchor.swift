@@ -121,7 +121,7 @@
             relation: LayoutRelation = .equal,
             isActive: Bool = true
         ) -> [NSLayoutConstraint] {
-            guard let superview = self.superview else {
+            guard let superview = superview else {
                 fatalError("Cannot pin to a nil superview")
             }
 

@@ -8,12 +8,12 @@ public enum Either<Left, Right> {
 
     /// Returns the value of `Left` instances, or `nil` for `Right` instances.
     public var left: Left? {
-        either(ifLeft: Optional<Left>.some, ifRight: constant(nil))
+        either(ifLeft: Left?.some, ifRight: constant(nil))
     }
 
     /// Returns the value of `Right` instances, or `nil` for `Left` instances.
     public var right: Right? {
-        either(ifLeft: constant(nil), ifRight: Optional<Right>.some)
+        either(ifLeft: constant(nil), ifRight: Right?.some)
     }
 
     /// Returns true of `Left` instances, or false for `Right` instances.
