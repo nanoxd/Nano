@@ -15,7 +15,7 @@
             }
 
             if let navigationController = navigationController,
-                navigationController.presentingViewController?.presentedViewController == navigationController
+               navigationController.presentingViewController?.presentedViewController == navigationController
             {
                 return true
             }

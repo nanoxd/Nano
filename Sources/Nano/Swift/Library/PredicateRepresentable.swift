@@ -4,63 +4,63 @@ public protocol PredicateRepresentable {
     init(format predicateFormat: String, argumentArray arguments: [Any]?)
 }
 
-extension PredicateRepresentable {
-    public init(field: String, equal value: Any, caseInsensitive: Bool = false) {
+public extension PredicateRepresentable {
+    init(field: String, equal value: Any, caseInsensitive: Bool = false) {
         let caseInsensitiveModifier = caseInsensitive ? "[c]" : ""
         self.init(format: "%K ==\(caseInsensitiveModifier) %@", argumentArray: [field, value])
     }
 
-    public init(field: String, notEqual value: Any, caseInsensitive: Bool = false) {
+    init(field: String, notEqual value: Any, caseInsensitive: Bool = false) {
         let caseInsensitiveModifier = caseInsensitive ? "[c]" : ""
         self.init(format: "%K !=\(caseInsensitiveModifier) %@", argumentArray: [field, value])
     }
 
-    public init(field: String, any value: Any) {
+    init(field: String, any value: Any) {
         self.init(format: "ANY %K = %@", argumentArray: [field, value])
     }
 
-    public init(field: String, lessThan value: Any) {
+    init(field: String, lessThan value: Any) {
         self.init(format: "%K < %@", argumentArray: [field, value])
     }
 
-    public init(field: String, lessThanOrEqual value: Any) {
+    init(field: String, lessThanOrEqual value: Any) {
         self.init(format: "%K <= %@", argumentArray: [field, value])
     }
 
-    public init(field: String, greaterThan value: Any) {
+    init(field: String, greaterThan value: Any) {
         self.init(format: "%K > %@", argumentArray: [field, value])
     }
 
-    public init(field: String, greaterThanOrEqual value: Any) {
+    init(field: String, greaterThanOrEqual value: Any) {
         self.init(format: "%K >= %@", argumentArray: [field, value])
     }
 
-    public init(field: String, beginsWith value: Any) {
+    init(field: String, beginsWith value: Any) {
         self.init(format: "%K BEGINSWITH[c] %@", argumentArray: [field, value])
     }
 
-    public init(field: String, endsWith value: Any) {
+    init(field: String, endsWith value: Any) {
         self.init(format: "%K ENDSWITH[c] %@", argumentArray: [field, value])
     }
 
-    public init(field: String, contains value: Any) {
+    init(field: String, contains value: Any) {
         self.init(format: "%K CONTAINS[c] %@", argumentArray: [field, value])
     }
 
-    public init(field: String, like value: Any) {
+    init(field: String, like value: Any) {
         self.init(format: "%K LIKE[c] %@", argumentArray: [field, value])
     }
 
-    public init(field: String, between this: Any, and that: Any) {
+    init(field: String, between this: Any, and that: Any) {
         self.init(format: "%K BETWEEN {%@, %@}", argumentArray: [field, this, that])
     }
 
-    public init(field: String, in values: [Any], caseInsensitive: Bool = false) {
+    init(field: String, in values: [Any], caseInsensitive: Bool = false) {
         let caseInsensitiveModifier = caseInsensitive ? "[c]" : ""
         self.init(format: "%K IN\(caseInsensitiveModifier) %@", argumentArray: [field, values])
     }
 
-    public init(field: String, notIn values: [Any], caseInsensitive: Bool = false) {
+    init(field: String, notIn values: [Any], caseInsensitive: Bool = false) {
         let caseInsensitiveModifier = caseInsensitive ? "[c]" : ""
         self.init(format: "NOT (%K IN\(caseInsensitiveModifier) %@)", argumentArray: [field, values])
     }
@@ -70,16 +70,16 @@ extension PredicateRepresentable {
 
 extension NSPredicate: PredicateRepresentable {}
 
-extension NSPredicate {
+public extension NSPredicate {
     /// Creates and returns a predicate that never matches any result.
-    public static var noMatch: NSPredicate {
+    static var noMatch: NSPredicate {
         NSPredicate(value: false)
     }
 }
 
 // MARK: - Array + NSPredicate
 
-extension Array where Element: NSPredicate {
+public extension Array where Element: NSPredicate {
     /// Returns a new predicate by joining the elements of the sequence by the given
     /// logical type.
     ///
@@ -95,7 +95,7 @@ extension Array where Element: NSPredicate {
     /// - Parameter type: The logical type used to join the elements in `self`.
     /// - Returns: A specialized predicate that evaluates logical combinations of
     ///            other predicates.
-    public func joined(by type: NSCompoundPredicate.LogicalType) -> NSPredicate {
+    func joined(by type: NSCompoundPredicate.LogicalType) -> NSPredicate {
         NSCompoundPredicate(type: type, subpredicates: self)
     }
 }

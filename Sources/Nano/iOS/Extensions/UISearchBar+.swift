@@ -2,7 +2,7 @@
     import UIKit
 
     extension UISearchBar {
-        private struct AssociatedKey {
+        private enum AssociatedKey {
             static var placeholderTextColor: UInt8 = 0
         }
 

@@ -42,7 +42,7 @@
 
         var isScrolling: Bool {
             switch currentScrollingDirection {
-            case .up, .down, .left, .right:
+            case .down, .left, .right, .up:
                 return true
             case .none, .unknown:
                 return false
