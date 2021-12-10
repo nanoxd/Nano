@@ -16,7 +16,6 @@ import SwiftUI
 ///     }
 /// }
 /// ```
-@available(iOS 13.0, tvOS 13.0, OSX 10.15, *)
 struct EnumPicker<Element: Hashable & RawRepresentable & CaseIterable>: View where Element.RawValue == String {
     @Binding var selected: Element
     var title = ""

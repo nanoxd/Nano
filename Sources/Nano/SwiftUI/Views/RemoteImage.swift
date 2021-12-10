@@ -1,6 +1,5 @@
 import SwiftUI
 
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct RemoteImage: SwiftUI.View {
     @State public var image: UXImage? = nil
 
@@ -47,7 +46,6 @@ public struct RemoteImage: SwiftUI.View {
     }
 }
 
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 private struct RemoteImage_Previews: PreviewProvider {
     static var previews: some View {
         RemoteImage(

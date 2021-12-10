@@ -1,12 +1,12 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.5
 import PackageDescription
 
 let package = Package(
     name: "Nano",
     platforms: [
-        .macOS(.v10_13),
-        .iOS(.v12),
-        .tvOS(.v12),
+        .macOS(.v11),
+        .iOS(.v14),
+        .tvOS(.v14),
     ],
     products: [
         .library(

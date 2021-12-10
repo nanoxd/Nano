@@ -3,7 +3,6 @@ import SwiftUI
 import XCTest
 
 /* Uncomment when SwiftUI unit testing is more baked in
- @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
  private struct LargeBlueTitleModifier: ViewModifier {
  func body(content: Content) -> some View {
      return content
@@ -12,7 +11,6 @@ import XCTest
  }
  }
 
- @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
  final class ViewExtensionTests: XCTestCase {
  func test_conditionalModifier_whenConditionIsMet() {
      var shouldModifyView = false
