@@ -4,9 +4,9 @@ import PackageDescription
 let package = Package(
     name: "Nano",
     platforms: [
-        .macOS(.v11),
-        .iOS(.v14),
-        .tvOS(.v14),
+        .macOS(.v13),
+        .iOS(.v16),
+        .tvOS(.v16),
     ],
     products: [
         .library(
